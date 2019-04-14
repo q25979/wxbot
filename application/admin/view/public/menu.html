@@ -1,0 +1,63 @@
+<div class="layui-side layui-side-menu">
+    <div class="layui-side-scroll">
+        <div class="layui-logo" lay-href="{:url('index/home')}">
+            <span>机器人管理</span>
+        </div>
+
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+
+            <li data-name="home" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="系统管理" lay-direction="2">
+                    <i class="layui-icon layui-icon-home"></i>
+                    <cite>数据管理</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a lay-href="{:url('index/datainfo')}">数据统计</a></dd>
+                </dl>
+            </li>
+
+            <li data-name="template" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="微信管理" lay-direction="2">
+                    <i class="layui-icon layui-icon-dialogue"></i>
+                    <cite>微信管理</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a lay-href="{:url('wxmanage/index')}">登录状态</a></dd>
+                </dl>
+            </li>
+
+            <li data-name="senior" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="配置管理" lay-direction="2">
+                    <i class="layui-icon layui-icon-component"></i>
+                    <cite>配置管理</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{:url('video/index')}">话术管理</a>
+                    </dd>
+                    <dd>
+                        <a lay-href="{:url('video/upload')}">时间管理</a>
+                    </dd>
+                </dl>
+            </li>
+
+            <li data-name="app" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="网站设置" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>网站设置</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a href="javascript:;" onclick="layer.tips('尚未开放', this);">基础设置</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;" onclick="layer.tips('尚未开放', this);">域名设置</a>
+                    </dd>
+                    <dd>
+                        <a lay-href="{:url('slider/index')}">轮播图设置</a>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
