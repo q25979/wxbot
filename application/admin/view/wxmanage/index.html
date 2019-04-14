@@ -1,1 +1,41 @@
-12
+{include file="public:head" /}
+
+<style>
+	.btn-container { margin-bottom: 10px; }
+	.layui-table-cell .layui-form-checkbox[lay-skin=primary] { top: 5px; }
+	.layui-layer-dialog { top: 160px !important; }
+</style>
+
+<div class="layui-fluid">
+	<div class="layui-card">
+		<div class="layui-card-header">登录信息</div>
+		<div class="layui-card-body">
+			<table id="table" lay-filter="wxlogin"></table>
+		</div>
+	</div>
+</div>
+
+<script>
+	layui.use(['table', 'form'], function() {
+		var table = layui.table;
+		var form  = layui.form;
+
+		var tableIns = table.render({
+			elem: "#table",
+			url: "{:url('index')}",
+			page: true,
+			size: 'sm',
+			done: function(res) {
+			},
+			cols: [[
+				{type: 'checkbox'},
+				{field: 'id', title: 'ID', width: 60, align: 'center'},
+				{field: 'wxname', title: '微信名称', width: 140, align: 'center'},
+				{field: 'wxstatus', title: '登录状态', width: 90, align: 'center'},
+				{field: 'botstatus', title: '机器人状态', width: 90, align: 'center'},
+				{field: 'login_time', title: '登录时间', width: 141, align: 'center'},
+				{id: '#operation', title: '操作', width: 120, align: 'center'},
+			]]
+		})
+	})
+</script>
