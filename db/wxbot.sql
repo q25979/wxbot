@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-04-15 22:00:32
+Date: 2019-04-15 22:57:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,4 +36,22 @@ CREATE TABLE `wb_user` (
 
 -- ----------------------------
 -- Records of wb_user
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wb_user_group
+-- ----------------------------
+DROP TABLE IF EXISTS `wb_user_group`;
+CREATE TABLE `wb_user_group` (
+  `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL DEFAULT '用户' COMMENT '组别名称',
+  `permissions` varchar(255) DEFAULT NULL COMMENT '权限分配多个按 '','' 隔开',
+  `create_time` int(16) DEFAULT NULL,
+  `update_time` int(16) DEFAULT NULL,
+  `deleted_time` int(16) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户权限组';
+
+-- ----------------------------
+-- Records of wb_user_group
 -- ----------------------------
