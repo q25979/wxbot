@@ -24,18 +24,33 @@
 			elem: "#table",
 			url: "{:url('index')}",
 			page: true,
+			toolbar: '#toolbar',
 			size: 'sm',
 			done: function(res) {
 			},
 			cols: [[
 				{type: 'checkbox'},
-				{field: 'id', title: 'ID', width: 60, align: 'center'},
+				{field: 'id', title: 'ID', width: 70, align: 'center'},
 				{field: 'wxname', title: '微信名称', width: 140, align: 'center'},
 				{field: 'wxstatus', title: '登录状态', width: 90, align: 'center'},
 				{field: 'botstatus', title: '机器人状态', width: 90, align: 'center'},
 				{field: 'login_time', title: '登录时间', width: 141, align: 'center'},
-				{id: '#operation', title: '操作', width: 120, align: 'center'},
+				{toolbar: '#operation', title: '操作', width: 110, align: 'center'},
 			]]
 		})
 	})
+</script>
+
+<script type="text/html" id="operation">
+	<a class="layui-btn layui-btn-xs" lay-event="configure">配置</a>
+	<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="logout">登出</a>
+</script>
+
+<script type="text/html" id="toolbar">
+	<div class="layui-btn-group">
+		<button class="layui-btn layui-btn-sm" lay-event="login">登录</button>
+		<button class="layui-btn layui-btn-sm" lay-event="start">启动</button>
+		<button class="layui-btn layui-btn-sm" lay-event="stop">暂停</button>
+		<button class="layui-btn layui-btn-danger layui-btn-sm" lay-event="logout">登出</button>
+	</div>
 </script>
